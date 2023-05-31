@@ -1,10 +1,8 @@
-package dev.zotware.apps.pts.services;
+package dev.zotware.apps.pts.batches;
 
-import dev.zotware.apps.pts.entities.Batch;
-import dev.zotware.apps.pts.entities.Item;
 import dev.zotware.apps.pts.enums.ItemStatus;
 import dev.zotware.apps.pts.exceptions.BatchNotFoundException;
-import dev.zotware.apps.pts.interfaces.BatchRepository;
+import dev.zotware.apps.pts.items.Item;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;

@@ -1,9 +1,9 @@
 package dev.zotware.apps.pts.exceptions;
 
-public class UserNotFoundException extends RuntimeException {
+public class BatchNotFoundException extends RuntimeException {
 
-    public UserNotFoundException(Long id) {
-        super("User Id \"" + id + "\" not found.");
+    public BatchNotFoundException(String id) {
+        super("Batch Id \"" + id + "\" not found.");
     }
 
 }

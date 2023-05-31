@@ -1,4 +1,4 @@
-package dev.zotware.apps.pts.controllers;
+package dev.zotware.apps.pts.auth;
 
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;

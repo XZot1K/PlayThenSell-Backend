@@ -1,4 +1,4 @@
-package dev.zotware.apps.pts.models.auth;
+package dev.zotware.apps.pts.auth;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,7 +21,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id;
 
     @NotBlank
     @Size(max = 20)
@@ -40,5 +40,9 @@ public class User {
     private Set<Role> roles = new HashSet<>();
 
 
-
+    public User(String username, String email, String encode) {
+        setUsername(username);
+        setEmail(email);
+        setPassword(encode);
+    }
 }

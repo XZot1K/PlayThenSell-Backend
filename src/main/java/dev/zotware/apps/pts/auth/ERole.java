@@ -1,5 +1,5 @@
-package dev.zotware.apps.pts.models.auth;
+package dev.zotware.apps.pts.auth;
 
 public enum ERole {
-    USER, MODERATOR, ADMIN
+    ROLE_USER, ROLE_MODERATOR, ROLE_ADMIN
 }

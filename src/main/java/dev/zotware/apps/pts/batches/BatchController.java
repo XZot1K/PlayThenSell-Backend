@@ -1,9 +1,8 @@
-package dev.zotware.apps.pts.controllers;
+package dev.zotware.apps.pts.batches;
 
-import dev.zotware.apps.pts.entities.Batch;
-import dev.zotware.apps.pts.entities.Item;
+import dev.zotware.apps.pts.enums.Condition;
 import dev.zotware.apps.pts.enums.ItemStatus;
-import dev.zotware.apps.pts.services.BatchService;
+import dev.zotware.apps.pts.items.Item;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -32,8 +31,14 @@ public class BatchController {
     }
 
     @PostMapping("/new")
-    public ResponseEntity<Batch> newBatch(@RequestBody Batch newBatch) {
-        return new ResponseEntity<>(batchService.newBatch(newBatch), HttpStatus.OK);
+    public ResponseEntity<Batch> newBatch(@RequestBody BatchRequest newBatch) {
+
+        Batch batch = new Batch();
+
+        batch.setName(newBatch.getName());
+        batch.setCondition(Condition.valueOf(newBatch.getCondition().toUpperCase().replace(" ", "_").replace("-", "_")));
+
+        return new ResponseEntity<>(batchService.newBatch(batch), HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")

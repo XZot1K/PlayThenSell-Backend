@@ -1,8 +1,5 @@
-package dev.zotware.apps.pts.controllers;
+package dev.zotware.apps.pts.auth;
 
-import dev.zotware.apps.pts.auth.ERole;
-import dev.zotware.apps.pts.auth.Role;
-import dev.zotware.apps.pts.auth.User;
 import dev.zotware.apps.pts.auth.jwt.JwtUtils;
 import dev.zotware.apps.pts.auth.payload.JwtResponse;
 import dev.zotware.apps.pts.auth.payload.LoginRequest;
@@ -120,6 +117,11 @@ public class AuthController {
         userRepository.save(user);
 
         return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
+    }
+
+    @GetMapping("/verify")
+    public ResponseEntity<?> verifyToken(@RequestParam String token) {
+        return ResponseEntity.ok(jwtUtils.validateJwtToken(token));
     }
 
 }

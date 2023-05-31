@@ -1,4 +1,4 @@
-package dev.zotware.apps.pts.models.auth;
+package dev.zotware.apps.pts.auth;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
